@@ -3,7 +3,7 @@ package springboot.com.techcareer.week2.sunday;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StudentService {
+public class StudentService1 {
 
     private String name;
 

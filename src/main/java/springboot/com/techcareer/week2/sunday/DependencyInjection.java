@@ -16,10 +16,10 @@ public class DependencyInjection implements CommandLineRunner {
     /**
      * Constructor Injection
      */
-    private final StudentService studentService;
+    private final StudentService1 studentService;
 
     @Autowired  //Spring 4.3 ve sonrası için zorunluluk kalmıştır.
-    public DependencyInjection(StudentService studentService) {
+    public DependencyInjection(StudentService1 studentService) {
         this.studentService = studentService;
     }
 
@@ -32,6 +32,7 @@ public class DependencyInjection implements CommandLineRunner {
 //    public void setStudentService(StudentService studentService) {
 //        this.studentService = studentService;
 //    }
+
     @Override
     public void run(String... args) throws Exception {
         studentService.getName();
