@@ -39,15 +39,20 @@ public class StudentController {
     }
 
     @PutMapping("/updateStudentAddress1")
-    public ResponseEntity<Boolean> updateStudentAddress1(@RequestBody StudentUpdateRequestDto studentUpdateRequestDto){
+    public ResponseEntity<Boolean> updateStudentAddress1(@RequestBody StudentUpdateRequestDto studentUpdateRequestDto) {
         Boolean updateStudentAddress = studentService.updateStudentAddress1(studentUpdateRequestDto);
         return new ResponseEntity<>(updateStudentAddress, HttpStatus.OK);
     }
 
     @PutMapping("/updateStudentAddress2")
-    public ResponseEntity<String> updateStudentAddress2(@RequestBody StudentUpdateRequestDto studentUpdateRequestDto){
+    public ResponseEntity<String> updateStudentAddress2(@RequestBody StudentUpdateRequestDto studentUpdateRequestDto) {
         String updateStudentAddress = studentService.updateStudentAddress2(studentUpdateRequestDto);
         return new ResponseEntity<>(updateStudentAddress, HttpStatus.OK);
     }
 
+    @PutMapping("/updateStudentAddress3")
+    public ResponseEntity<String> updateStudentAddress3(@RequestBody StudentUpdateRequestDto studentUpdateRequestDto) {
+        String updateStudentAddress = studentService.updateStudentAddress3(studentUpdateRequestDto);
+        return new ResponseEntity<>(updateStudentAddress, HttpStatus.OK);
+    }
 }

@@ -9,9 +9,11 @@ public class test {
         flower.setNumber("1");
         System.out.println(flower);
 
-        //springboot.com.techcareer.week3.saturday.toString.Flower@8fa9e5f
+        // toString metodu ezilmezse Object classındaki toString metodu çalışır. Aşağıdaki çıktıyı verir.
+        // springboot.com.techcareer.week3.saturday.toString.Flower@8fa9e5f
 
 
-        //Flower{number='1', name='Rose'}
+        // toString metodu ezildiğinde aşağıdaki çıktıyı verir.
+        // Flower{number='1', name='Rose'}
     }
 }

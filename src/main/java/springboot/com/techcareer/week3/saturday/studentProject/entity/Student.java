@@ -15,7 +15,6 @@ import lombok.*;
 @Table(name = "student")
 public class Student {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -28,6 +27,4 @@ public class Student {
 
     @Column(name = "identity_number")
     private String identityNumber;
-
-
 }

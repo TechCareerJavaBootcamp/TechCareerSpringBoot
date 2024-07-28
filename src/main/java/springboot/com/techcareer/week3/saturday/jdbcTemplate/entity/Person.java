@@ -1,4 +1,4 @@
-package springboot.com.techcareer.week3.saturday.jdbcTemplate.controller.entity;
+package springboot.com.techcareer.week3.saturday.jdbcTemplate.entity;
 
 public class Person {
 

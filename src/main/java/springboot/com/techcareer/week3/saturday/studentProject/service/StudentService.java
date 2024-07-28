@@ -48,6 +48,7 @@ public class StudentService {
         return student;
     }
 
+    // Eğer map işlemi yaptığımız dto ile entity'deki field'ların isimleri farklı olursa değer ataması yapmaz.
     private Student convertToStudentFromDto2(StudentSaveRequestDto studentSaveRequestDto) {
         ModelMapper modelMapper = new ModelMapper();
         Student student = modelMapper.map(studentSaveRequestDto, Student.class);
@@ -69,6 +70,8 @@ public class StudentService {
         return studentList;
     }
 
+    // Yukarıdaki işlem için tüm verileri db'den getirmek yerine filtreleme işlemi yapılıp db'den en küçük data Listesi çekilmelidir.
+    // Yani filtreleme işlemini kod tarafında yapmak yerine db seviyesinde yapıyoruz.
     public List<StudentResponseDto> getStudentListByName2(String name) {
         List<StudentResponseDto> responseDtos = new ArrayList<>();
         List<Student> studentList = studentRepository.findAllByName(name);
@@ -78,7 +81,6 @@ public class StudentService {
         }
         return responseDtos;
     }
-
 
     public Boolean updateStudentAddress1(StudentUpdateRequestDto studentUpdateRequestDto) {
         Long id = studentUpdateRequestDto.getId();
@@ -96,12 +98,31 @@ public class StudentService {
         Long id = studentUpdateRequestDto.getId();
         String address = studentUpdateRequestDto.getAddress();
         Optional<Student> studentOptional = studentRepository.findById(id);
-        if(studentOptional.isPresent()) {
+        if (studentOptional.isPresent()) {
             Student student = studentOptional.get();
             student.setAddress(address);
             studentRepository.save(student);
             return "true";
         }
         return String.format("%s Id'sine sahip  bir öğrenci bulunmamaktadır.", id);
+    }
+
+    public String updateStudentAddress3(StudentUpdateRequestDto studentUpdateRequestDto) {
+        Long id = studentUpdateRequestDto.getId();
+        String address = studentUpdateRequestDto.getAddress();
+
+        try {
+            Optional<Student> studentOptional = studentRepository.findById(id);
+            if (studentOptional.isPresent()) {
+                Student student = studentOptional.get();
+                student.setAddress(address);
+                studentRepository.save(student);
+                return "Kayıt işlemi başarılı.";
+            }
+            return "Veritabanında böyle bir öğrenci yoktur.";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Bir hata ile karşılaşıldı. Lütfen tekrar deneyiniz.";
+        }
     }
 }

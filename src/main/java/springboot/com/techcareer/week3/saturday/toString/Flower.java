@@ -1,18 +1,26 @@
 package springboot.com.techcareer.week3.saturday.toString;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import springboot.com.techcareer.week3.saturday.studentProject.entity.Student;
+import lombok.ToString;
 
 @Getter
 @Setter
 @EqualsAndHashCode
-public class Flower extends Student {
+//@ToString
+public class Flower {
 
     private String name;
 
-    private  String number;
+    private String number;
 
+    //Default olarak bu şekilde verilir. İhtiyaca göre güncellenebilir.
+    @Override
+    public String toString() {
+        return "Flower{" +
+                "name='" + name + '\'' +
+                ", number='" + number + '\'' +
+                '}';
+    }
 }

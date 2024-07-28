@@ -1,7 +1,7 @@
-package springboot.com.techcareer.week3.saturday.jdbcTemplate.controller.mapper;
+package springboot.com.techcareer.week3.saturday.jdbcTemplate.mapper;
 
 import org.springframework.jdbc.core.RowMapper;
-import springboot.com.techcareer.week3.saturday.jdbcTemplate.controller.entity.Person;
+import springboot.com.techcareer.week3.saturday.jdbcTemplate.entity.Person;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

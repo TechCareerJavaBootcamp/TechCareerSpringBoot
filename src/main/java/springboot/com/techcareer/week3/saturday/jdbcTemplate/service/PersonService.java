@@ -1,10 +1,10 @@
-package springboot.com.techcareer.week3.saturday.jdbcTemplate.controller.service;
+package springboot.com.techcareer.week3.saturday.jdbcTemplate.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-import springboot.com.techcareer.week3.saturday.jdbcTemplate.controller.entity.Person;
-import springboot.com.techcareer.week3.saturday.jdbcTemplate.controller.mapper.PersonMapper;
+import springboot.com.techcareer.week3.saturday.jdbcTemplate.entity.Person;
+import springboot.com.techcareer.week3.saturday.jdbcTemplate.mapper.PersonMapper;
 
 import java.util.List;
 
