@@ -1,6 +1,7 @@
 package springboot.com.techcareer.week3.saturday.studentProject.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import springboot.com.techcareer.week3.saturday.studentProject.dto.requestDto.StudentSaveRequestDto;
@@ -125,4 +126,16 @@ public class StudentService {
             return "Bir hata ile karşılaşıldı. Lütfen tekrar deneyiniz.";
         }
     }
+
+    @SneakyThrows
+    public Boolean saveStudent2(StudentSaveRequestDto studentSaveRequestDto) {
+        Student student = convertToStudentFromDto1(studentSaveRequestDto);
+        try {
+            studentRepository.save(student);
+        } catch (Exception e) {
+            throw new Exception("Bir hata ile karşılaşıldı.");
+        }
+        return true;
+    }
+
 }

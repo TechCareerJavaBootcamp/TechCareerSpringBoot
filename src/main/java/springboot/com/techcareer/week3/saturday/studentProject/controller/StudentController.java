@@ -55,4 +55,10 @@ public class StudentController {
         String updateStudentAddress = studentService.updateStudentAddress3(studentUpdateRequestDto);
         return new ResponseEntity<>(updateStudentAddress, HttpStatus.OK);
     }
+
+    @PostMapping("/saveStudent2")
+    public ResponseEntity<Boolean> saveStudent2(@RequestBody StudentSaveRequestDto studentSaveRequestDto) throws Exception {
+        Boolean saveStudent = studentService.saveStudent2(studentSaveRequestDto);
+        return new ResponseEntity<>(saveStudent, HttpStatus.CREATED);
+    }
 }
